@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">My Canadian Food Guide</string>
+    <string name="app_profile">Add Profile</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">My Canadian Food Guide</string>
+    <string name="profileTag">Profile Name: </string>
+    <string name="nameTag">Name: </string>
+    <string name="sexTag">Sex: </string>
+    <string name="ageTag">Age: </string>
+    <string name="buttonSubmit">Submit</string>
+    <string name="radioM">Male</string>
+    <string name="radioF">Female</string>
+    <string name="selectAge">Select Age Group</string>
+
+    <string-array name="ageGroups">
+        <item>Select an age group</item>
+        <item>2-3 years</item>
+        <item>4-8 years</item>
+        <item>9-13 years</item>
+        <item>14-18 years</item>
+        <item>19-30 years</item>
+        <item>31-50 years</item>
+        <item>51-70 years</item>
+        <item>71+ years</item>
+    </string-array>
+    <string name="title_activity_food_option">FoodOptionActivity</string>
+    <string name="profileInfo">profileInfo</string>
+    <string name="foodGroupInfo">There are lots of foods to choose from in each food group. Use the recommendations in each food group to help guide your food choices.</string>
+    <string name="vegFruit">Vegetables and Fruit</string>
+    <string name="grainProd">Grain Products</string>
+    <string name="milkAltern">Milk and Alternatives</string>
+    <string name="meatAltern">Meat and Alternatives</string>
+    <string name="title_activity_recommendations">RecommendationsActivity</string>
+    <string name="title_activity_veggies_fruits">VeggiesFruits</string>
+    <string name="title_activity_grain_products">GrainProducts</string>
+    <string name="title_activity_milk_alternatives">MilkAlternatives</string>
+    <string name="title_activity_meat_alternatives">MeatAlternatives</string>
+    <string name="title_activity_intro">IntroActivity</string>
+    <string name="introduction">My Canadian Food Guide is an interactive tool that provides valuable information for your healthy lifestyle.</string>
+    <string name="applicationUses">This application helps you: \n - Learn how many Food Guide servings you need to eat from each of the four food groups \n - See how much food is one Food Guide serving</string>
+    <string name="delete">X</string>
+    <string name="go">Go</string>
+    <string name="addProfile">Add Profile</string>
+    <string name="selectProfile">Select your profile or make a new one:</string>
+    <string name="title_activity_definition_food_group">DefinitionFoodGroup</string>
+    <string name="definitionFoodGroups">What are the four food groups?</string>
+    <string name="FruitsAndVeggies">Fruits and Vegetables are foods full of valuable nutrients which have a lot of health benefits including:
+    \n - Fruits give us plenty of fibre, vitamins, minerals including potassium, Vitamins A and C.
+        \n - A healthy intake of fruit and vegetables help protect against major illnesses such as cancer and heart disease.
+        \n - Most fruit and vegetables are low in calories and are filling.
+        \n - Eating a range of fruits and vegetables will provide antioxidants which will work together to protect our bodies.
+    </string>
+    <string name="GrainProducts">
+        Grain products give us most of the carbohydrate we need for energy to see us through our day. It helps us concentrate
+        at school or at work and it powers us when we play sports or do exercise. Grain products contain Vitamin B, fibre and
+        minerals such as zinc and magnesium. Grain products include items such as bread, rice and pasta.
+    </string>
+    <string name="MilkAlternatives">
+        Milk and Alternatives are an important source of calcium which help give us strong bones and teeth. They also provide
+        protein, carbohydrates, minerals like zinc, vitamins such as A and B12, and fat (for energy). Milk products include items such as milk,
+        yogurt and cheese.
+    </string>
+    <string name="MeatAlternatives">
+        Meat and Alternatives include a wide range of foods which give us many important nutrient such as protein, iron, zinc,
+        vitamin B, and fats such as omega fatty acids. This food group is also known as the Protein Group. Meat products
+        include items such as meat, poultry, seafood, eggs, tofu and other soy products.
+    </string>
+    <string name="swipeLeft">Swipe left to proceed</string>
+    <string name="swipeRight">Swipe right to go back</string>
+
+
+</resources>

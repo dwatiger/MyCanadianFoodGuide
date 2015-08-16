@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dwau.mycanadianfoodguide" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/app_profile" />
+        <activity
+            android:name=".RecommendationsActivity"
+            android:label="@string/title_activity_recommendations" >
+        </activity>
+        <activity
+            android:name=".VeggiesFruits"
+            android:label="@string/title_activity_veggies_fruits" >
+        </activity>
+        <activity
+            android:name=".GrainProducts"
+            android:label="@string/title_activity_grain_products" >
+        </activity>
+        <activity
+            android:name=".MilkAlternatives"
+            android:label="@string/title_activity_milk_alternatives" >
+        </activity>
+        <activity
+            android:name=".MeatAlternatives"
+            android:label="@string/title_activity_meat_alternatives" >
+        </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/title_activity_intro" >
+        </activity>
+        <activity
+            android:name=".DefinitionFoodGroup"
+            android:label="@string/title_activity_definition_food_group" >
+        </activity>
+    </application>
+
+</manifest>
