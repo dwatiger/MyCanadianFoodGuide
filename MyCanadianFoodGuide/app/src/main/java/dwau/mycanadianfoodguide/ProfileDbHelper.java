@@ -46,7 +46,7 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
         this.onCreate(db);
     }
 
-    public void createProfile(Profile profile){
+    public void createProfile(Profile profile){ // adds values to database
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_PROFILE, profile.getProfileName());
@@ -56,7 +56,7 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public Profile readProfile(int id){
+    public Profile readProfile(int id){ // reads id and returns profile
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_PROFILES, allColumns, " id = ?", new String[]{
                 String.valueOf(id)}, null, null, null, null);
@@ -70,7 +70,7 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
         return profile;
     }
 
-    public List getAllProfiles(){
+    public List getAllProfiles(){ // reads database and return a list of profiles
         List profiles = new LinkedList();
 
         String query = "SELECT * FROM " + TABLE_PROFILES;
@@ -90,7 +90,7 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
         return profiles;
     }
 
-    public int updateProfile(Profile profile){
+    public int updateProfile(Profile profile){ // updates profile given info
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_PROFILE, profile.getProfileName());
@@ -101,7 +101,7 @@ public class ProfileDbHelper extends SQLiteOpenHelper {
         return i;
     }
 
-    public void deleteProfile(Profile profile){
+    public void deleteProfile(Profile profile){ // deletes a profile
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_PROFILES, COLUMN_ID + " = ?", new String[] { String.valueOf(profile.getId())});
         db.close();

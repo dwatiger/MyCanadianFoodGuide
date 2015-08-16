@@ -36,7 +36,6 @@ public class IntroActivity extends ActionBarActivity {
         ArrayList<String> list = new ArrayList<String>();
         ArrayList<String> listAge = new ArrayList<String>();
         ArrayList<String> listSex = new ArrayList<String>();
-        ArrayList<Integer> listId = new ArrayList<Integer>();
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.query("profiles", column, null, null, null, null, null);

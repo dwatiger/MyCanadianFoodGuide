@@ -17,7 +17,7 @@ public class MeatAlternatives extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meat_alternatives);
-        Bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras(); // gets intent extras from recommendations, and displays json in a listview
         if (extras != null){
             String mtadstmt = extras.getString("MTADStmt");
             ArrayList mtafoods = extras.getStringArrayList("MTAFoods");

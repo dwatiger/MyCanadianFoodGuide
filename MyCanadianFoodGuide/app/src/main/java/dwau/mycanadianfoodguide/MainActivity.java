@@ -50,7 +50,7 @@ public class MainActivity extends ActionBarActivity {
         });
     }
 
-    class retrievedata extends AsyncTask<String,String,String>{
+    class retrievedata extends AsyncTask<String,String,String>{ // thread task for json metadata checker
         // http://techlovejump.com/android-json-parser-from-url/
         @Override
         protected String doInBackground(String... arg0) {
@@ -62,16 +62,16 @@ public class MainActivity extends ActionBarActivity {
             }
             return metadata;
         }
-        protected void onPostExecute(String ab){
+        protected void onPostExecute(String ab){ // checks if data is equal to current version
             Log.d("postexecute", ""+metadata);
-            if (metadata != "2015-06-11T13:19:02.389655"){
+            if (metadata != "2015-06-11T13:19:02.389655"){ // there isn't a version for the json metadata
                 Toast.makeText(getApplicationContext(), "There is a new update for the data", Toast.LENGTH_LONG).show();
             }
-        }
+        } // i used metadata_created as the check
 
     }
 
-    public void toIntro(View v){
+    public void toIntro(View v){ // sends intent to intro activity
         Intent intent = new Intent(this, IntroActivity.class);
         startActivity(intent);
     }

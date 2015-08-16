@@ -36,7 +36,7 @@ public class RecommendationsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_recommendations);
 
         Bundle extras = getIntent().getExtras();
-        if(extras != null){
+        if(extras != null){ // displays profile info and recommendation info
             String age = extras.getString("profileAge");
             String sex = extras.getString("profileSex");
             String info = "As a " + sex + " aged " + age + ", this is the amount of Food Guide servings you need each day.";
@@ -47,7 +47,7 @@ public class RecommendationsActivity extends ActionBarActivity {
         Button buttonDefFG = (Button)findViewById(R.id.definitionFG);
         buttonDefFG.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // button to definition page
                 Intent intent = new Intent(RecommendationsActivity.this, DefinitionFoodGroup.class);
                 startActivity(intent);
             }
@@ -57,12 +57,12 @@ public class RecommendationsActivity extends ActionBarActivity {
         Button buttonG = (Button)findViewById(R.id.buttonG);
         Button buttonMKA = (Button)findViewById(R.id.buttonMKA);
         Button buttonMTA = (Button)findViewById(R.id.buttonMTA);
-        json = loadJSON("fg_directional_satements-en.json");
-        jsonFood = loadJSON("foods-en.json");
+        json = loadJSON("fg_directional_satements-en.json"); // directional statement json load
+        jsonFood = loadJSON("foods-en.json"); // food list json load
 
         buttonVF.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // veggiefruit button
                 data = getJSONDirectionalStatement(json, 3, 0, 10);
                 listFood = getJSONFoods(jsonFood, "vf");
                 toVeggieFruit(v);
@@ -70,7 +70,7 @@ public class RecommendationsActivity extends ActionBarActivity {
         });
         buttonG.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // grain product button
                 data = getJSONDirectionalStatement(json, 5, 3, 10);
                 listFood = getJSONFoods(jsonFood, "gr");
                 toGrainProduct(v);
@@ -78,7 +78,7 @@ public class RecommendationsActivity extends ActionBarActivity {
         });
         buttonMKA.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // milk and alternatves button
                 data = getJSONDirectionalStatement(json, 7, 5, 10);
                 listFood = getJSONFoods(jsonFood, "da");
                 toMilkAlt(v);
@@ -86,7 +86,7 @@ public class RecommendationsActivity extends ActionBarActivity {
         });
         buttonMTA.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // meat and alternatives button
                 data = getJSONDirectionalStatement(json, 10, 7, 8);
                 listFood = getJSONFoods(jsonFood, "me");
                 toMeatAlt(v);
@@ -96,7 +96,7 @@ public class RecommendationsActivity extends ActionBarActivity {
     }
 
     public String loadJSON(String fileName){ // stackoverflow.com/questions/13814503/reading-a-json-file-in-android
-        String json = null;
+        String json = null; // loads json from assets folder and reads file and stores it in a string
         try{
             InputStream is = getAssets().open(fileName);
             int size = is.available();
@@ -109,7 +109,7 @@ public class RecommendationsActivity extends ActionBarActivity {
     }
 
     public String getJSONDirectionalStatement(String json, int n, int j, int k){ // www.tutorialspoint.com/android/android_json_parser.htm
-        data = "";
+        data = ""; // given the string from above, it gets specific statements based on the integers given (counted from looking at json file)
         try {
             JSONObject jsonRootObject = new JSONObject(json);
             JSONArray jsonArray = jsonRootObject.optJSONArray("directional_statements");
@@ -123,7 +123,7 @@ public class RecommendationsActivity extends ActionBarActivity {
         }catch (JSONException e){ e.printStackTrace(); return null; }
     }
 
-    public ArrayList getJSONFoods(String json, String type){
+    public ArrayList getJSONFoods(String json, String type){ //searches json file for foods specific to given food type
         try{
             JSONObject jsonRootObject = new JSONObject(json);
             JSONArray jsonArray = jsonRootObject.optJSONArray("foods");
@@ -141,28 +141,28 @@ public class RecommendationsActivity extends ActionBarActivity {
         } catch (JSONException e) { e.printStackTrace(); return null; }
     }
 
-    public void toVeggieFruit(View v){
+    public void toVeggieFruit(View v){ // links to veggiefruit class
         intent = new Intent(this, VeggiesFruits.class);
         intent.putExtra("VFDStmt", data);
         intent.putStringArrayListExtra("VFFoods", listFood);
         startActivity(intent);
     }
 
-    public void toGrainProduct(View v){
+    public void toGrainProduct(View v){ // links to grain products class
         intent = new Intent(this, GrainProducts.class);
         intent.putExtra("GPDStmt", data);
         intent.putStringArrayListExtra("GPFoods", listFood);
         startActivity(intent);
     }
 
-    public void toMilkAlt(View v){
+    public void toMilkAlt(View v){ // links to milk and alternatives class
         intent = new Intent(this, MilkAlternatives.class);
         intent.putExtra("MKADStmt", data);
         intent.putStringArrayListExtra("MKAFoods", listFood);
         startActivity(intent);
     }
 
-    public void toMeatAlt(View v){
+    public void toMeatAlt(View v){ // links to meat and alternatives class
         intent = new Intent(this, MeatAlternatives.class);
         intent.putExtra("MTADStmt", data);
         intent.putStringArrayListExtra("MTAFoods", listFood);

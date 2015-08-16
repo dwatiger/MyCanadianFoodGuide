@@ -52,7 +52,7 @@ public class CustomProfileAdapter extends BaseAdapter implements ListAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent){
         View view = convertView;
-        if(view == null){
+        if(view == null){ // creates layout
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.profile_list_layout, null);
         }
@@ -62,14 +62,14 @@ public class CustomProfileAdapter extends BaseAdapter implements ListAdapter {
         Button goButton = (Button)view.findViewById(R.id.go_btn);
         deleteButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // On delete button - removes profile from list
                 list.remove(position);
                 notifyDataSetChanged();
             }
         });
         goButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { // Sends profile information to recommendation activity
                 String age = listAge.get(position);
                 String sex = listSex.get(position);
                 Intent intent = new Intent(v.getContext(), RecommendationsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

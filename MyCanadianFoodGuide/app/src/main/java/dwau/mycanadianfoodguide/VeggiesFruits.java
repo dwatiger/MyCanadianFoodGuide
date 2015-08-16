@@ -21,7 +21,7 @@ public class VeggiesFruits extends ActionBarActivity {
         setContentView(R.layout.activity_veggies_fruits);
 
         Bundle extras = getIntent().getExtras();
-        if (extras != null){
+        if (extras != null){  // gets intent extras from recommendations, and displays json in a listview
             String vfdstmt = extras.getString("VFDStmt");
             ArrayList vffoods = extras.getStringArrayList("VFFoods");
             TextView tv = (TextView)findViewById(R.id.drt_stmt);

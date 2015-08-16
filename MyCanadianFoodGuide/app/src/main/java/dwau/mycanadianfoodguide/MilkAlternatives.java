@@ -17,7 +17,7 @@ public class MilkAlternatives extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_milk_alternatives);
-        Bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras(); // gets intent extras from recommendations, and displays json in a listview
         if (extras != null){
             String mkadstmt = extras.getString("MKADStmt");
             ArrayList mkafoods = extras.getStringArrayList("MKAFoods");

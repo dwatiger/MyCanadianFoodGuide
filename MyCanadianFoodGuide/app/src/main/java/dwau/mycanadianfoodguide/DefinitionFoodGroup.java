@@ -21,7 +21,7 @@ public class DefinitionFoodGroup extends ActionBarActivity {
         viewFlipper = (ViewFlipper) findViewById(R.id.view_flipper);
     }
 
-    public boolean onTouchEvent(MotionEvent touchevent)
+    public boolean onTouchEvent(MotionEvent touchevent) // configures slide events for definition page
     {
         // http://www.learn-android-easily.com/2013/06/android-viewflipper-example.html
         switch (touchevent.getAction())

@@ -3,7 +3,7 @@ package dwau.mycanadianfoodguide;
 /**
  * Created by dwau on 15-07-31.
  */
-public class Profile {
+public class Profile { // Database class
 
     private int id;
     private String profileName;

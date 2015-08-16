@@ -25,7 +25,7 @@ public class JsonParser {
     public JsonParser(){
 
     }
-    public JSONObject makeHttpRequest(String url){
+    public JSONObject makeHttpRequest(String url){ // sets up json from URL
         DefaultHttpClient httpclient = new DefaultHttpClient();
         HttpPost httppost = new HttpPost(url);
         try {

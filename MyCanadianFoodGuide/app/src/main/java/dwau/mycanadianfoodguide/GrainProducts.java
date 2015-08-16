@@ -18,7 +18,7 @@ public class GrainProducts extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grain_products);
 
-        Bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras(); // gets intent extras from recommendations, and displays json in a listview
         if (extras != null){
             String gpdstmt = extras.getString("GPDStmt");
             ArrayList gpfoods = extras.getStringArrayList("GPFoods");

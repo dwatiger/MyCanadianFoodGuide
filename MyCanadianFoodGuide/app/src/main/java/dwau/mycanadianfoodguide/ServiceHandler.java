@@ -31,7 +31,7 @@ public class ServiceHandler {
     }
 
     public String makeServiceCall(String url, int method, List<NameValuePair> params){
-        try {
+        try { // handles the http url calls - required for json parsing for urls
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpEntity httpEntity = null;
             HttpResponse httpResponse = null;

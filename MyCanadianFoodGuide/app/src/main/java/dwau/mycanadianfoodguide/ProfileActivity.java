@@ -35,7 +35,8 @@ public class ProfileActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+// "Form" type page for profile creation
+        // accesses profile db helper and uses the information taken to create a new profile
         edProfileName = (EditText)findViewById(R.id.editProfile);
         ages = getResources().getStringArray(R.array.ageGroups);
         ageSpn = (Spinner)findViewById(R.id.ageSpinner);
@@ -55,14 +56,14 @@ public class ProfileActivity extends ActionBarActivity {
         });
     }
 
-    public void toFoodOption(View v){
+    public void toFoodOption(View v){ // on submit, sends information to recommendation activity
         Intent intent = new Intent(this, RecommendationsActivity.class);
         intent.putExtra("profileAge", age);
         intent.putExtra("profileSex", sex);
         startActivity(intent);
     }
 
-    public void onRadioButtonClicked(View v){
+    public void onRadioButtonClicked(View v){ // sets the gender variable
         boolean checked = ((RadioButton) v).isChecked();
         switch(v.getId()){
             case R.id.radioMale:
